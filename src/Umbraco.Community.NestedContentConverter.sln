@@ -44,6 +44,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github Actions", "Github Ac
 		..\.github\workflows\pr-validation.yml = ..\.github\workflows\pr-validation.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{74BDE29D-626C-4EC2-9DF0-0F7BB8AF2CEF}"
+	ProjectSection(SolutionItems) = preProject
+		..\Utilities\CreateNugetPackages.ps1 = ..\Utilities\CreateNugetPackages.ps1
+		..\Utilities\SetupTestSite.ps1 = ..\Utilities\SetupTestSite.ps1
+		..\Utilities\StartTestSite.ps1 = ..\Utilities\StartTestSite.ps1
+		..\Utilities\UpdateTestSites.ps1 = ..\Utilities\UpdateTestSites.ps1
+		..\Utilities\Variables.ps1 = ..\Utilities\Variables.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +102,7 @@ Global
 		{0190BCEB-0D4E-4B44-92A0-95D73F79F979} = {0DEEB2DC-FC3C-4CAF-A27C-EC54052CD4FB}
 		{4A376984-3B8C-4BC6-90EA-3A6AED1304E2} = {E286EC7E-D51D-4A0F-9C96-1EEBD2EBCC5D}
 		{833205F6-BF26-4A6D-8E19-4A1E792FC441} = {2F9C066A-5888-4F92-81DD-B3CC6B2F2DCF}
+		{74BDE29D-626C-4EC2-9DF0-0F7BB8AF2CEF} = {2F9C066A-5888-4F92-81DD-B3CC6B2F2DCF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {96977299-E883-4C7A-BD9E-2FEF3FD122CB}
