@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\BackOffice\code\Umbraco.Community.NestedContentConverter.BackOffice.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\code\Umbraco.Community.NestedContentConverter.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageTags>umbraco, umbraco-marketplace</PackageTags>
+  </PropertyGroup>
+</Project>
