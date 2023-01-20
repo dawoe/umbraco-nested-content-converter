@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\code\Umbraco.Community.NestedContentConverter.Core.csproj" />
+  </ItemGroup>
+</Project>
