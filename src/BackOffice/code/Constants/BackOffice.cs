@@ -17,7 +17,7 @@ namespace Umbraco.Community.NestedContentConverter.BackOffice.Constants
         /// <summary>
         /// The tree alias.
         /// </summary>
-        public const string TreeAlias = "nestedcontentconvertertree";
+        public const string TreeAlias = "nestedcontentconverter";
 
         /// <summary>
         /// The back office tree name.
@@ -27,6 +27,6 @@ namespace Umbraco.Community.NestedContentConverter.BackOffice.Constants
         /// <summary>
         /// The back office plugin group.
         /// </summary>
-        public const string PluginName = "NestedContentConverer";
+        public const string PluginName = "NestedContentConverter";
     }
 }
