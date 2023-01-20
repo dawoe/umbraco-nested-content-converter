@@ -21,23 +21,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1E383B11-D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.NestedContentConverter.Core", "Core\code\Umbraco.Community.NestedContentConverter.Core.csproj", "{8841DA90-539C-4722-88A2-C6D3476B033F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Community.NestedContentConverter.Core.Tests", "Core\tests\Umbraco.Community.NestedContentConverter.Core.Tests.csproj", "{0C6552A5-53D9-4129-8884-1C0A74FC0EDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.NestedContentConverter.Core.Tests", "Core\tests\Umbraco.Community.NestedContentConverter.Core.Tests.csproj", "{0C6552A5-53D9-4129-8884-1C0A74FC0EDA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{AF634C3D-35BA-4BC8-A971-C42575A2EC4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Community.NestedContentConverter.Infrastructure", "Infrastructure\code\Umbraco.Community.NestedContentConverter.Infrastructure.csproj", "{9DC4C2CC-6EB1-49DA-975C-473A2283551C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.NestedContentConverter.Infrastructure", "Infrastructure\code\Umbraco.Community.NestedContentConverter.Infrastructure.csproj", "{9DC4C2CC-6EB1-49DA-975C-473A2283551C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Community.NestedContentConverter.Infrastructure.Tests", "Infrastructure\tests\Umbraco.Community.NestedContentConverter.Infrastructure.Tests.csproj", "{49E42C9A-D828-458F-832D-F67C956DBFF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.NestedContentConverter.Infrastructure.Tests", "Infrastructure\tests\Umbraco.Community.NestedContentConverter.Infrastructure.Tests.csproj", "{49E42C9A-D828-458F-832D-F67C956DBFF2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackOffice", "BackOffice", "{0DEEB2DC-FC3C-4CAF-A27C-EC54052CD4FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Community.NestedContentConverter.BackOffice", "BackOffice\code\Umbraco.Community.NestedContentConverter.BackOffice.csproj", "{D07B6EAE-B961-4603-AE91-F9F8C55A0082}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.NestedContentConverter.BackOffice", "BackOffice\code\Umbraco.Community.NestedContentConverter.BackOffice.csproj", "{D07B6EAE-B961-4603-AE91-F9F8C55A0082}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Community.NestedContentConverter.BackOffice.Tests", "BackOffice\tests\Umbraco.Community.NestedContentConverter.BackOffice.Tests.csproj", "{0190BCEB-0D4E-4B44-92A0-95D73F79F979}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.NestedContentConverter.BackOffice.Tests", "BackOffice\tests\Umbraco.Community.NestedContentConverter.BackOffice.Tests.csproj", "{0190BCEB-0D4E-4B44-92A0-95D73F79F979}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Package", "Package", "{E286EC7E-D51D-4A0F-9C96-1EEBD2EBCC5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Umbraco.Community.NestedContentConverter", "Package\code\Umbraco.Community.NestedContentConverter.csproj", "{4A376984-3B8C-4BC6-90EA-3A6AED1304E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.Community.NestedContentConverter", "Package\code\Umbraco.Community.NestedContentConverter.csproj", "{4A376984-3B8C-4BC6-90EA-3A6AED1304E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github Actions", "Github Actions", "{833205F6-BF26-4A6D-8E19-4A1E792FC441}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\pr-validation.yml = ..\.github\workflows\pr-validation.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +92,7 @@ Global
 		{D07B6EAE-B961-4603-AE91-F9F8C55A0082} = {0DEEB2DC-FC3C-4CAF-A27C-EC54052CD4FB}
 		{0190BCEB-0D4E-4B44-92A0-95D73F79F979} = {0DEEB2DC-FC3C-4CAF-A27C-EC54052CD4FB}
 		{4A376984-3B8C-4BC6-90EA-3A6AED1304E2} = {E286EC7E-D51D-4A0F-9C96-1EEBD2EBCC5D}
+		{833205F6-BF26-4A6D-8E19-4A1E792FC441} = {2F9C066A-5888-4F92-81DD-B3CC6B2F2DCF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {96977299-E883-4C7A-BD9E-2FEF3FD122CB}
