@@ -1,0 +1,32 @@
+// <copyright file="BackOffice.cs" company="Umbraco Community">
+// Copyright (c) Dave Woestenborghs and contributors
+// </copyright>
+
+namespace Umbraco.Community.NestedContentConverter.BackOffice.Constants
+{
+    /// <summary>
+    /// Constants used for the back office.
+    /// </summary>
+    internal static class BackOffice
+    {
+        /// <summary>
+        /// The tree group.
+        /// </summary>
+        public const string TreeGroup = "converters";
+
+        /// <summary>
+        /// The tree alias.
+        /// </summary>
+        public const string TreeAlias = "nestedcontentconvertertree";
+
+        /// <summary>
+        /// The back office tree name.
+        /// </summary>
+        public const string TreeName = "Nested Content Converter";
+
+        /// <summary>
+        /// The back office plugin group.
+        /// </summary>
+        public const string PluginName = "NestedContentConverer";
+    }
+}
