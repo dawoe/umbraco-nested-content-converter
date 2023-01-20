@@ -16,6 +16,4 @@ dotnet pack $SourceDir\$SolutionName.sln -c Debug -o $TestSitesFolder\nuget --ve
 
 cd "$TestSitesFolder\$TestProjectName"
 
-Copy-Item "$SourceDir\nuget.config" -Destination "$TestSitesFolder\$TestProjectName"
-
 dotnet add package $PackageName -v "$($version)-$dateTime".trim()

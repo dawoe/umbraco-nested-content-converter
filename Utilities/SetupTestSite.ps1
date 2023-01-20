@@ -16,7 +16,7 @@
     Write-Host $CurrentDir
 
     Write-Host "Installing Umbraco templates"
-    dotnet new --install Umbraco.Templates
+    dotnet new install Umbraco.Templates::$CmsVersion
 
     Write-Host "Creating Umbraco site"
     cd $Destination
