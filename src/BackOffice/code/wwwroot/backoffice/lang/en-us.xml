@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language alias="en" intName="English (US)" localName="English (US)" lcid="" culture="en-US">
+  <creator>
+    <name>Dave Woestenborghs</name>
+    <link>https://github.com/dawoe</link>
+  </creator>
+  <area alias="treeHeaders">
+    <key alias="converters">Converters</key>
+    <key alias="nestedcontentconverter">Nested Content to Block List</key>
+  </area>
+</language>

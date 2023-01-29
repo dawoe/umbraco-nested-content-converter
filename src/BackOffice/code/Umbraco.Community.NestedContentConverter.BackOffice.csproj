@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <StaticWebAssetBasePath>App_Plugins/SeoTools</StaticWebAssetBasePath>
+    <StaticWebAssetBasePath>App_Plugins/NestedContentConverter</StaticWebAssetBasePath>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\code\Umbraco.Community.NestedContentConverter.Core.csproj" />
   </ItemGroup>
+
 
 </Project>
