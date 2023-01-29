@@ -2,17 +2,20 @@
 // Copyright (c) Dave Woestenborghs and contributors
 // </copyright>
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Constants
 {
     /// <summary>
     /// Constants used for database creation and access.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     internal static class Database
     {
         /// <summary>
         /// A prefix to apply to all the table names.
         /// </summary>
-        public const string TableNamePrefix = "ncc";
+        private const string TableNamePrefix = "ncc";
 
         /// <summary>
         /// Constants for the data type migrations table.
