@@ -2,6 +2,7 @@
 // Copyright (c) Dave Woestenborghs and contributors
 // </copyright>
 
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core;
@@ -24,6 +25,7 @@ namespace Umbraco.Community.NestedContentConverter.BackOffice.Controllers.Trees
         TreeTitle = Constants.BackOffice.TreeName,
         SortOrder = 35)]
     [PluginController(Constants.BackOffice.PluginName)]
+    [ExcludeFromCodeCoverage]
     public sealed class NestedContentConverterTreeController : TreeController
     {
         /// <summary>

@@ -2,11 +2,14 @@
 // Copyright (c) Dave Woestenborghs and contributors
 // </copyright>
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Umbraco.Community.NestedContentConverter.BackOffice.Constants
 {
     /// <summary>
     /// Constants used for the back office.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     internal static class BackOffice
     {
         /// <summary>
