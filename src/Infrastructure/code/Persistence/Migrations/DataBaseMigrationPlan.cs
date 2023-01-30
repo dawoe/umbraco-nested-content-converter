@@ -8,7 +8,7 @@ using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Migrat
 namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Migrations
 {
     /// <summary>
-    /// Represents the migration plan for setting up database tables.
+    /// The migration plan for setting up database tables.
     /// </summary>
     internal sealed class DataBaseMigrationPlan : MigrationPlan
     {
