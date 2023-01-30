@@ -5,7 +5,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Umbraco.Cms.Infrastructure.Migrations;
 
-namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Migrations.Version__1_0_0
+namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Migrations.Version_1_0_0
 {
     /// <summary>
     /// A migration to setup the data type migrations table.
