@@ -3,9 +3,12 @@
 // </copyright>
 
 using System.Diagnostics.CodeAnalysis;
+using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Migrations;
+using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Repositories;
+using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Repositories.Impl;
 
 namespace Umbraco.Community.NestedContentConverter.Infrastructure.Extensions
 {
@@ -21,11 +24,19 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Extensions
         /// <param name="builder">A builder.</param>
         /// <returns>A <see cref="IUmbracoBuilder"/>.</returns>
         public static IUmbracoBuilder AddNestedContentConverter(this IUmbracoBuilder builder) =>
-            builder.AddNotificationHandlers();
+            builder
+            .AddNotificationHandlers()
+            .AddRepositories();
 
         private static IUmbracoBuilder AddNotificationHandlers(this IUmbracoBuilder builder)
         {
             builder.AddNotificationHandler<UmbracoApplicationStartingNotification, DatabaseMigrationNotificationHandler>();
+            return builder;
+        }
+
+        private static IUmbracoBuilder AddRepositories(this IUmbracoBuilder builder)
+        {
+            builder.Services.AddSingleton<IDataTypeMigrationRepository, DataTypeMigrationRepository>();
             return builder;
         }
     }
