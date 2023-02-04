@@ -45,6 +45,9 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Re
         private ISqlContext SqlContext => this.AmbientScope.SqlContext;
 
         /// <inheritdoc/>
+        public Task<IReadOnlyList<DataTypeMigrationEntity>> GetAllAsync() => throw new NotImplementedException();
+
+        /// <inheritdoc/>
         public async Task<InsertEntityResult<DataTypeMigrationEntity>> InsertAsync(Guid nestedContentKey, Guid blockListKey)
         {
             using var transaction = this.Database.GetTransaction();

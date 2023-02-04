@@ -18,5 +18,11 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Re
         /// <param name="blockListKey">The key of the corresponding block list data type.</param>
         /// <returns>A <see cref="InsertEntityResult{T}"/>.</returns>
         Task<InsertEntityResult<DataTypeMigrationEntity>> InsertAsync(Guid nestedContentKey, Guid blockListKey);
+
+        /// <summary>
+        /// Gets all data type migrations entities from the database.
+        /// </summary>
+        /// <returns>A <see cref="IReadOnlyList{T}"/>.</returns>
+        Task<IReadOnlyList<DataTypeMigrationEntity>> GetAllAsync();
     }
 }
