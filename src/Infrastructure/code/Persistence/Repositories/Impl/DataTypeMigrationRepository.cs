@@ -44,8 +44,6 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Re
 
         private ISqlContext SqlContext => this.AmbientScope.SqlContext;
 
-        private Sql<ISqlContext> Sql() => this.SqlContext.Sql();
-
         /// <inheritdoc/>
         public async Task<InsertEntityResult<DataTypeMigrationEntity>> InsertAsync(Guid nestedContentKey, Guid blockListKey)
         {
