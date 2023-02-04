@@ -17,6 +17,6 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Re
         /// <param name="nestedContentKey">The key of the migrated nested content data type.</param>
         /// <param name="blockListKey">The key of the corresponding block list data type.</param>
         /// <returns>A <see cref="InsertEntityResult{T}"/>.</returns>
-        InsertEntityResult<DataTypeMigrationEntity> Insert(Guid nestedContentKey, Guid blockListKey);
+        Task<InsertEntityResult<DataTypeMigrationEntity>> InsertAsync(Guid nestedContentKey, Guid blockListKey);
     }
 }
