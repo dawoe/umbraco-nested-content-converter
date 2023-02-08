@@ -4,3 +4,4 @@
 src/.vs/
 testsites/
 src/Umbraco.Community.NestedContentConverter.sln.DotSettings.user
+src/TestResults/
