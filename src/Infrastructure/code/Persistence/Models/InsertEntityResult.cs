@@ -1,4 +1,4 @@
-// <copyright file="InsertModelResult.cs" company="Umbraco Community">
+// <copyright file="InsertEntityResult.cs" company="Umbraco Community">
 // Copyright (c) Dave Woestenborghs and contributors
 // </copyright>
 

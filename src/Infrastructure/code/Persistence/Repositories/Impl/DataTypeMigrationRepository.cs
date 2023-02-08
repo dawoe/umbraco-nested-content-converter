@@ -3,7 +3,6 @@
 // </copyright>
 
 using Microsoft.Extensions.Logging;
-using NPoco;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Infrastructure.Scoping;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Models;
@@ -20,6 +19,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Re
         /// Initializes a new instance of the <see cref="DataTypeMigrationRepository"/> class.
         /// </summary>
         /// <param name="scopeAccessor">A <see cref="IScopeAccessor"/>.</param>
+        /// <param name="logger">A <see cref="ILogger{TCategoryName}"/>.</param>
         public DataTypeMigrationRepository(IScopeAccessor scopeAccessor, ILogger<DataTypeMigrationRepository> logger)
         {
             this.scopeAccessor = scopeAccessor;
@@ -45,7 +45,18 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Re
         private ISqlContext SqlContext => this.AmbientScope.SqlContext;
 
         /// <inheritdoc/>
-        public Task<IReadOnlyList<DataTypeMigrationEntity>> GetAllAsync() => throw new NotImplementedException();
+        public async Task<IReadOnlyList<DataTypeMigrationEntity>> GetAllAsync()
+        {
+            try
+            {
+                return await this.Database.FetchAsync<DataTypeMigrationEntity>();
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError(ex, "Could not retrieve database migrations list from the database");
+                return Array.Empty<DataTypeMigrationEntity>();
+            }
+        }
 
         /// <inheritdoc/>
         public async Task<InsertEntityResult<DataTypeMigrationEntity>> InsertAsync(Guid nestedContentKey, Guid blockListKey)

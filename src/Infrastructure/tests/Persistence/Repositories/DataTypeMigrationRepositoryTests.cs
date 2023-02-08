@@ -13,9 +13,6 @@ using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Reposi
 
 namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Persistence.Repositories
 {
-    /// <summary>
-    /// Tests for the <see cref="DataTypeMigrationRepository"/>.
-    /// </summary>
     [TestFixture]
     internal sealed class DataTypeMigrationRepositoryTests
     {
@@ -26,9 +23,6 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Persiste
 
         private DataTypeMigrationRepository repository = null!;
 
-        /// <summary>
-        /// Setup for all tests.
-        /// </summary>
         [SetUp]
         public void Setup()
         {
@@ -51,12 +45,8 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Persiste
             this.repository = new DataTypeMigrationRepository(this.scopeAccessorMock.Object, Mock.Of<ILogger<DataTypeMigrationRepository>>());
         }
 
-        /// <summary>
-        /// Tests that a error result is returned when something goes wrong.
-        /// </summary>
-        /// <returns>A <see cref="Task"/>.</returns>
         [Test]
-        public async Task InsertShouldReturnAFailedResultWhenExceptionIsThrown()
+        public async Task Insert_Should_Return_FailedResult_When_Exception_Is_Thrown()
         {
             // arrange
             this.databaseMock.Setup(x => x.InsertAsync(It.IsAny<DataTypeMigrationEntity>())).ThrowsAsync(new Exception());
@@ -74,12 +64,8 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Persiste
             });
         }
 
-        /// <summary>
-        /// Tests that inserting passes correct entity to the database and returns succes result.
-        /// </summary>
-        /// <returns>A <see cref="Task"/>.</returns>
         [Test]
-        public async Task InsertShouldPassCorrectEntityToInsertMethodAndReturnSuccessResult()
+        public async Task Insert_Should_Pass_Correct_Entity_To_Insert_Method_And_Return_SuccessResult()
         {
             // arrange
             var nestedContentKey = Guid.Parse("b343f84a-6fca-4540-a901-60825e51c55b");
@@ -105,6 +91,47 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Persiste
                 Assert.That(result.Error, Is.Null);
                 Assert.That(actualEntity.NestedContentKey, Is.EqualTo(nestedContentKey));
                 Assert.That(actualEntity.BlockListKey, Is.EqualTo(blockListKey));
+            });
+        }
+
+        [Test]
+        public async Task GetAll_Should_Return_Empty_List_When_Fetch_From_Database_Fails()
+        {
+            // arrange
+            this.databaseMock.Setup(x => x.FetchAsync<DataTypeMigrationEntity>()).ThrowsAsync(new Exception());
+
+            // act
+            var result = await this.repository.GetAllAsync();
+
+            // assert
+            Assert.Multiple(() =>
+            {
+                this.databaseMock.Verify(x => x.FetchAsync<DataTypeMigrationEntity>(), Times.Once);
+
+                Assert.That(result, Is.Not.Null);
+                Assert.That(result.Count, Is.EqualTo(0));
+            });
+        }
+
+        [Test]
+        public async Task GetAll_Should_Return_List_Of_Items_Fetched_From_Database_From_Database()
+        {
+            // arrange
+            var listItems = new List<DataTypeMigrationEntity> { new(), new(), };
+
+            this.databaseMock.Setup(x => x.FetchAsync<DataTypeMigrationEntity>()).ReturnsAsync(listItems);
+
+            // act
+            var result = await this.repository.GetAllAsync();
+
+            // assert
+            Assert.Multiple(() =>
+            {
+                this.databaseMock.Verify(x => x.FetchAsync<DataTypeMigrationEntity>(), Times.Once);
+
+                Assert.That(result, Is.Not.Null);
+                Assert.That(result.Count, Is.EqualTo(listItems.Count));
+                Assert.That(result, Is.EqualTo(listItems));
             });
         }
     }
