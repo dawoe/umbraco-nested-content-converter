@@ -19,6 +19,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Persiste
         private Mock<IUmbracoDatabase> databaseMock = null!;
         private Mock<IScope> scopeMock = null!;
         private Mock<IScopeAccessor> scopeAccessorMock = null!;
+        private Mock<ILogger<DataTypeMigrationRepository>> loggerMock = null!;
         private ISqlContext sqlContext = null!;
 
         private DataTypeMigrationRepository repository = null!;
@@ -42,7 +43,9 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Persiste
             this.scopeAccessorMock = new Mock<IScopeAccessor>();
             this.scopeAccessorMock.SetupGet(x => x.AmbientScope).Returns(this.scopeMock.Object);
 
-            this.repository = new DataTypeMigrationRepository(this.scopeAccessorMock.Object, Mock.Of<ILogger<DataTypeMigrationRepository>>());
+            this.loggerMock = new Mock<ILogger<DataTypeMigrationRepository>>();
+
+            this.repository = new DataTypeMigrationRepository(this.scopeAccessorMock.Object, this.loggerMock.Object);
         }
 
         [Test]
@@ -61,6 +64,15 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Persiste
                 Assert.That(result, Is.Not.Null);
                 Assert.That(result.Success, Is.False);
                 Assert.That(result.Entity, Is.Null);
+
+                this.loggerMock.Verify(
+                    x => x.Log(
+                        It.Is<LogLevel>(l => l == LogLevel.Error),
+                        It.IsAny<EventId>(),
+                        It.Is<It.IsAnyType>((v, t) => true),
+                        It.IsAny<Exception>(),
+                        It.Is<Func<It.IsAnyType, Exception?, string>>((v, t) => true)),
+                    Times.Once());
             });
         }
 
@@ -110,6 +122,15 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Persiste
 
                 Assert.That(result, Is.Not.Null);
                 Assert.That(result.Count, Is.EqualTo(0));
+
+                this.loggerMock.Verify(
+                    x => x.Log(
+                        It.Is<LogLevel>(l => l == LogLevel.Error),
+                        It.IsAny<EventId>(),
+                        It.Is<It.IsAnyType>((v, t) => true),
+                        It.IsAny<Exception>(),
+                        It.Is<Func<It.IsAnyType, Exception?, string>>((v, t) => true)),
+                    Times.Once());
             });
         }
 

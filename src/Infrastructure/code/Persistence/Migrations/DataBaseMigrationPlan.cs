@@ -2,6 +2,7 @@
 // Copyright (c) Dave Woestenborghs and contributors
 // </copyright>
 
+using System.Diagnostics.CodeAnalysis;
 using Umbraco.Cms.Infrastructure.Migrations;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Migrations.Version_1_0_0;
 
@@ -10,6 +11,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Mi
     /// <summary>
     /// The migration plan for setting up database tables.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     internal sealed class DataBaseMigrationPlan : MigrationPlan
     {
         /// <summary>

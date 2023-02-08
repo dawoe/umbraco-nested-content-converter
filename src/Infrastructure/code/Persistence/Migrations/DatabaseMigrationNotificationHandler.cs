@@ -2,6 +2,7 @@
 // Copyright (c) Dave Woestenborghs and contributors
 // </copyright>
 
+using System.Diagnostics.CodeAnalysis;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Migrations;
@@ -15,6 +16,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Mi
     /// <summary>
     /// A notification handler for executing <see cref="DataBaseMigrationPlan"/>.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     internal sealed class DatabaseMigrationNotificationHandler : INotificationHandler<UmbracoApplicationStartingNotification>
     {
         private readonly IMigrationPlanExecutor migrationPlanExecutor;
