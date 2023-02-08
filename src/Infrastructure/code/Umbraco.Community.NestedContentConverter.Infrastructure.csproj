@@ -2,4 +2,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\code\Umbraco.Community.NestedContentConverter.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Persistence\Repositories\" />
+  </ItemGroup>
 </Project>
