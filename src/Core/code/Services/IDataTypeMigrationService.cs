@@ -9,7 +9,7 @@ namespace Umbraco.Community.NestedContentConverter.Core.Services
     /// <summary>
     /// A service with methods for migrating data types.
     /// </summary>
-    internal interface IDataTypeMigrationService
+    public interface IDataTypeMigrationService
     {
         /// <summary>
         /// Gets the migrated data types.
