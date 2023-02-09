@@ -15,6 +15,6 @@ namespace Umbraco.Community.NestedContentConverter.Core.Services
         /// Gets the migrated data types.
         /// </summary>
         /// <returns>A <see cref="IReadOnlyList{T}"/>.</returns>
-        IReadOnlyList<IMigratedDataType> GetMigratedDataTypes();
+        Task<IReadOnlyList<IMigratedDataType>> GetMigratedDataTypesAsync();
     }
 }

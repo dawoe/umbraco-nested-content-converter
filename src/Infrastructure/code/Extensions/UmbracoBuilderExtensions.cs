@@ -4,6 +4,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using Microsoft.Extensions.DependencyInjection;
+using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Community.NestedContentConverter.Core.Services;
@@ -27,9 +28,16 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Extensions
         /// <returns>A <see cref="IUmbracoBuilder"/>.</returns>
         public static IUmbracoBuilder AddNestedContentConverter(this IUmbracoBuilder builder) =>
             builder
-            .AddNotificationHandlers()
-            .AddRepositories()
-            .AddServices();
+                .AddCustomUdiTypes()
+                .AddNotificationHandlers()
+                .AddRepositories()
+                .AddServices();
+
+        private static IUmbracoBuilder AddCustomUdiTypes(this IUmbracoBuilder builder)
+        {
+            UdiParser.RegisterUdiType(Core.Constants.UdiTypes.MigratedDataType, UdiType.GuidUdi);
+            return builder;
+        }
 
         private static IUmbracoBuilder AddNotificationHandlers(this IUmbracoBuilder builder)
         {
