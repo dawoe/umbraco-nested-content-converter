@@ -7,11 +7,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
+using Umbraco.Community.NestedContentConverter.Core.Services;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Migrations;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Repositories;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Repositories.Impl;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Services;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Services.Impl;
+using Umbraco.Extensions;
 
 namespace Umbraco.Community.NestedContentConverter.Infrastructure.Extensions
 {
@@ -53,6 +55,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Extensions
 
         private static IUmbracoBuilder AddServices(this IUmbracoBuilder builder)
         {
+            builder.Services.AddUnique<IRenamingService, RenamingService>(ServiceLifetime.Singleton);
             builder.Services.AddSingleton<IDataTypeMigrationService, DataTypeMigrationService>();
             return builder;
         }

@@ -5,6 +5,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Community.NestedContentConverter.Core;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Extensions;
 
 namespace Umbraco.Community.NestedContentConverter.Infrastructure
@@ -13,6 +14,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure
     /// The composer for the infra structure project.
     /// </summary>
     [ExcludeFromCodeCoverage]
+    [ComposeBefore(typeof(CoreComposer))]
     internal sealed class InfrastructureComposer : IComposer
     {
         /// <inheritdoc/>
