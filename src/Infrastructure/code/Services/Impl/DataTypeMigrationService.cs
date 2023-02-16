@@ -5,12 +5,11 @@
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Community.NestedContentConverter.Core.Models;
-using Umbraco.Community.NestedContentConverter.Core.Services;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Models;
+using Umbraco.Community.NestedContentConverter.Infrastructure.Models.Impl;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Repositories;
 
-namespace Umbraco.Community.NestedContentConverter.Infrastructure.Services
+namespace Umbraco.Community.NestedContentConverter.Infrastructure.Services.Impl
 {
     /// <inheritdoc />
     internal sealed class DataTypeMigrationService : IDataTypeMigrationService

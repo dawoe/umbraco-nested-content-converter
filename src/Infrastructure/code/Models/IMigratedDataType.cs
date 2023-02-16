@@ -4,12 +4,12 @@
 
 using Umbraco.Cms.Core;
 
-namespace Umbraco.Community.NestedContentConverter.Core.Models
+namespace Umbraco.Community.NestedContentConverter.Infrastructure.Models
 {
     /// <summary>
     /// A migrated data type.
     /// </summary>
-    public interface IMigratedDataType
+    internal interface IMigratedDataType
     {
         /// <summary>
         /// Gets the data type migration udi.

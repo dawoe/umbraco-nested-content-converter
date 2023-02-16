@@ -3,7 +3,7 @@
 // </copyright>
 
 using Umbraco.Cms.Core;
-using Umbraco.Community.NestedContentConverter.Infrastructure.Models;
+using Umbraco.Community.NestedContentConverter.Infrastructure.Models.Impl;
 
 namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Models
 {

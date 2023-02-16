@@ -7,11 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
-using Umbraco.Community.NestedContentConverter.Core.Services;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Migrations;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Repositories;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Repositories.Impl;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Services;
+using Umbraco.Community.NestedContentConverter.Infrastructure.Services.Impl;
 
 namespace Umbraco.Community.NestedContentConverter.Infrastructure.Extensions
 {

@@ -7,10 +7,10 @@ using Moq;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Services;
-using Umbraco.Community.NestedContentConverter.Infrastructure.Models;
+using Umbraco.Community.NestedContentConverter.Infrastructure.Models.Impl;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Models;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Repositories;
-using Umbraco.Community.NestedContentConverter.Infrastructure.Services;
+using Umbraco.Community.NestedContentConverter.Infrastructure.Services.Impl;
 
 namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Services
 {

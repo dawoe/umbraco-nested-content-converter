@@ -3,9 +3,8 @@
 // </copyright>
 
 using Umbraco.Cms.Core;
-using Umbraco.Community.NestedContentConverter.Core.Models;
 
-namespace Umbraco.Community.NestedContentConverter.Infrastructure.Models
+namespace Umbraco.Community.NestedContentConverter.Infrastructure.Models.Impl
 {
     /// <inheritdoc />
     internal sealed class MigratedDataType : IMigratedDataType

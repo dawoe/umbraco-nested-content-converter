@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\code\Umbraco.Community.NestedContentConverter.Core.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\code\Umbraco.Community.NestedContentConverter.Infrastructure.csproj" />
   </ItemGroup>
 
 

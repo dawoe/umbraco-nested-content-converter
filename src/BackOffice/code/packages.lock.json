@@ -2262,6 +2262,14 @@
           "Umbraco.Cms.Web.BackOffice": "[10.0.0, 11.0.0)",
           "Umbraco.Cms.Web.Website": "[10.0.0, 11.0.0)"
         }
+      },
+      "umbraco.community.nestedcontentconverter.infrastructure": {
+        "type": "Project",
+        "dependencies": {
+          "Umbraco.Cms.Web.BackOffice": "[10.0.0, 11.0.0)",
+          "Umbraco.Cms.Web.Website": "[10.0.0, 11.0.0)",
+          "Umbraco.Community.NestedContentConverter.Core": "[10.0.0, )"
+        }
       }
     }
   }
