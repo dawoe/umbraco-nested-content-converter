@@ -12,7 +12,22 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Services.Impl
         /// <inheritdoc/>
         public string GenerateNewNameForDataType(string dataTypeName)
         {
-            throw new NotImplementedException();
+            if (dataTypeName.Contains("Nested Content", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return dataTypeName.Replace("Nested Content", "Block List", StringComparison.InvariantCultureIgnoreCase);
+            }
+
+            if (dataTypeName.Contains("NestedContent", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return dataTypeName.Replace("NestedContent", "Block List", StringComparison.InvariantCultureIgnoreCase);
+            }
+
+            if (dataTypeName.Contains("NC", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return dataTypeName.Replace("NC", "Block List", StringComparison.InvariantCultureIgnoreCase);
+            }
+
+            return dataTypeName + " - Block List";
         }
     }
 }
