@@ -2,6 +2,7 @@
 // Copyright (c) Dave Woestenborghs and contributors
 // </copyright>
 
+using System.Text.RegularExpressions;
 using Umbraco.Community.NestedContentConverter.Core.Services;
 
 namespace Umbraco.Community.NestedContentConverter.Infrastructure.Services.Impl
@@ -9,25 +10,21 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Services.Impl
     /// <inheritdoc />
     internal sealed class RenamingService : IRenamingService
     {
+        private static readonly Regex Pattern = new Regex("(Nested\\s*Content)|(NC)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
         /// <inheritdoc/>
         public string GenerateNewNameForDataType(string dataTypeName)
         {
-            if (dataTypeName.Contains("Nested Content", StringComparison.InvariantCultureIgnoreCase))
+            var replacement = "Block List";
+
+            var result = Pattern.Replace(dataTypeName, replacement);
+
+            if (result == dataTypeName)
             {
-                return dataTypeName.Replace("Nested Content", "Block List", StringComparison.InvariantCultureIgnoreCase);
+                result += $" - {replacement}";
             }
 
-            if (dataTypeName.Contains("NestedContent", StringComparison.InvariantCultureIgnoreCase))
-            {
-                return dataTypeName.Replace("NestedContent", "Block List", StringComparison.InvariantCultureIgnoreCase);
-            }
-
-            if (dataTypeName.Contains("NC", StringComparison.InvariantCultureIgnoreCase))
-            {
-                return dataTypeName.Replace("NC", "Block List", StringComparison.InvariantCultureIgnoreCase);
-            }
-
-            return dataTypeName + " - Block List";
+            return result;
         }
     }
 }
