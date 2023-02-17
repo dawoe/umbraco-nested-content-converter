@@ -7,7 +7,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Enums
     /// <summary>
     /// Enumeration of data type migration states.
     /// </summary>
-    internal enum DataTypeMigrationState
+    public enum DataTypeMigrationState
     {
         /// <summary>
         /// No migration has happened yet.

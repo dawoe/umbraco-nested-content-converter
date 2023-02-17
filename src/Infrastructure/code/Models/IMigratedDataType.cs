@@ -9,7 +9,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Models
     /// <summary>
     /// A migrated data type.
     /// </summary>
-    internal interface IMigratedDataType
+    public interface IMigratedDataType
     {
         /// <summary>
         /// Gets the data type migration udi.

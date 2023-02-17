@@ -9,7 +9,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Models
     /// <summary>
     /// Data type migration state result.
     /// </summary>
-    internal interface IDataTypeMigrationStateResult
+    public interface IDataTypeMigrationStateResult
     {
         /// <summary>
         /// Gets the state.

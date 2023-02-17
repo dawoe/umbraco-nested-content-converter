@@ -7,7 +7,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Models
     /// <summary>
     /// A data type migration state object.
     /// </summary>
-    internal interface IDataTypeMigrationStateModel
+    public interface IDataTypeMigrationStateModel
     {
         /// <summary>
         /// Gets the name of the nested content data type.
