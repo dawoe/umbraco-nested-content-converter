@@ -24,7 +24,14 @@ namespace Umbraco.Community.NestedContentConverter.BackOffice.Extensions
         /// <returns>A <see cref="IUmbracoBuilder"/>.</returns>
         public static IUmbracoBuilder AddNestedContentConverterBackOffice(this IUmbracoBuilder builder) =>
             builder
+                .AddManifests()
                 .AddNotificationHandlers();
+
+        private static IUmbracoBuilder AddManifests(this IUmbracoBuilder builder)
+        {
+            builder.ManifestFilters().Append<ManifestFilter>();
+            return builder;
+        }
 
         private static IUmbracoBuilder AddNotificationHandlers(this IUmbracoBuilder builder)
         {
