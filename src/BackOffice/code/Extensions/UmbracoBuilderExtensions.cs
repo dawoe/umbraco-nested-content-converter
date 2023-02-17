@@ -6,7 +6,6 @@ using System.Diagnostics.CodeAnalysis;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Community.NestedContentConverter.BackOffice.NotificationHandlers;
-using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Migrations;
 
 namespace Umbraco.Community.NestedContentConverter.BackOffice.Extensions
 {

@@ -2,6 +2,7 @@
 // Copyright (c) Dave Woestenborghs and contributors
 // </copyright>
 
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Routing;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
@@ -13,6 +14,7 @@ namespace Umbraco.Community.NestedContentConverter.BackOffice.NotificationHandle
     /// <summary>
     /// A notification handler for the <see cref="ServerVariablesParsingNotification"/>.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     internal sealed class ServerVariablesParsingNotificationHandler : INotificationHandler<ServerVariablesParsingNotification>
     {
         private readonly LinkGenerator linkGenerator;

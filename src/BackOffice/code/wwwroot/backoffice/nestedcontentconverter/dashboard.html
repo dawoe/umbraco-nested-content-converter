@@ -1,1 +1,30 @@
-Simple dashboard view
+<div ng-controller="Umbraco.Community.NestedContentConverters.DashboardController as vm">
+
+  <umb-editor-view footer="false">
+    <umb-editor-header name="vm.title"
+                       name-required="false"
+                       name-locked="true"
+                       hide-alias="true"
+                       hide-icon="true"
+                       hide-description="true">
+
+    </umb-editor-header>
+
+    <umb-editor-container>
+      <umb-load-indicator class="mt2" ng-if="vm.loading"></umb-load-indicator>
+
+      <div ng-if="!vm.loading">
+
+        <umb-box>
+          <umb-box-header title="Datatypes"></umb-box-header>
+          <umb-box-content>List datatypes here</umb-box-content>
+        </umb-box>
+
+      </div>
+    </umb-editor-container>
+
+  </umb-editor-view>
+
+  
+
+</div>

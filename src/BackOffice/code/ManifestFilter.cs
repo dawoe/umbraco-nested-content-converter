@@ -25,7 +25,7 @@ namespace Umbraco.Community.NestedContentConverter.BackOffice
                 Version = assembly.GetName().Version?.ToString(3) ?? "1.0.0",
                 BundleOptions = BundleOptions.Default,
                 Scripts =
-                    new[] { "~/App_Plugins/NestedContentConverter/backoffice/nestedcontentconverter/resource.js" },
+                    new[] { "/App_Plugins/NestedContentConverter/backoffice/nestedcontentconverter/resource.js", "/App_Plugins/NestedContentConverter/backoffice/nestedcontentconverter/controller.js" },
             });
         }
     }

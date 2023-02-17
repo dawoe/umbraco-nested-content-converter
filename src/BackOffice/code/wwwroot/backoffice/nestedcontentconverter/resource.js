@@ -20,3 +20,4 @@
   }
 
   angular.module('umbraco.resources').factory('Umbraco.Community.NestedContentConverter.Resource', NestedContentConverterResource);
+})();
