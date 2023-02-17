@@ -1,4 +1,4 @@
-// <copyright file="IDataTypeMigrationState.cs" company="Umbraco Community">
+// <copyright file="IDataTypeMigrationStateModel.cs" company="Umbraco Community">
 // Copyright (c) Dave Woestenborghs and contributors
 // </copyright>
 
