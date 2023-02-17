@@ -5,6 +5,7 @@
 using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Services;
+using Umbraco.Community.NestedContentConverter.Core.Services;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Models;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Models.Impl;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Repositories;
@@ -17,6 +18,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Services.Impl
         private readonly ILogger<DataTypeMigrationService> logger;
         private readonly IDataTypeService dataTypeService;
         private readonly IDataTypeMigrationRepository repository;
+        private readonly IRenamingService renamingService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DataTypeMigrationService"/> class.
@@ -24,11 +26,13 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Services.Impl
         /// <param name="logger">A <see cref="ILogger{TCategoryName}"/>.</param>
         /// <param name="dataTypeService">A <see cref="IDataTypeService"/>.</param>
         /// <param name="repository">A <see cref="IDataTypeMigrationRepository"/>.</param>
-        public DataTypeMigrationService(ILogger<DataTypeMigrationService> logger, IDataTypeService dataTypeService, IDataTypeMigrationRepository repository)
+        /// <param name="renamingService">A <see cref="IRenamingService"/>.</param>
+        public DataTypeMigrationService(ILogger<DataTypeMigrationService> logger, IDataTypeService dataTypeService, IDataTypeMigrationRepository repository, IRenamingService renamingService)
         {
             this.logger = logger;
             this.dataTypeService = dataTypeService;
             this.repository = repository;
+            this.renamingService = renamingService;
         }
 
         /// <inheritdoc />

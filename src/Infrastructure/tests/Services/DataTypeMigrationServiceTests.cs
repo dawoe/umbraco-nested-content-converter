@@ -7,6 +7,7 @@ using Moq;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Services;
+using Umbraco.Community.NestedContentConverter.Core.Services;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Models.Impl;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Models;
 using Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Repositories;
@@ -20,6 +21,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Services
         private Mock<ILogger<DataTypeMigrationService>> loggerMock = null!;
         private Mock<IDataTypeService> dataTypeServiceMock = null!;
         private Mock<IDataTypeMigrationRepository> dataTypeMigrationRepositoryMock = null!;
+        private Mock<IRenamingService> renamingService = null!;
 
         private DataTypeMigrationService service = null!;
 
@@ -32,7 +34,10 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Tests.Services
             this.dataTypeServiceMock = new Mock<IDataTypeService>();
             this.dataTypeMigrationRepositoryMock = new Mock<IDataTypeMigrationRepository>();
 
-            this.service = new DataTypeMigrationService(this.loggerMock.Object, this.dataTypeServiceMock.Object, this.dataTypeMigrationRepositoryMock.Object);
+            this.renamingService = new Mock<IRenamingService>();
+            this.renamingService.Setup(x => x.GenerateNewNameForDataType(It.IsAny<string>())).Returns((string x) => x);
+
+            this.service = new DataTypeMigrationService(this.loggerMock.Object, this.dataTypeServiceMock.Object, this.dataTypeMigrationRepositoryMock.Object, this.renamingService.Object);
         }
 
         [Test]
