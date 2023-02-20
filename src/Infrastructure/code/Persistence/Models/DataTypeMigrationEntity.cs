@@ -31,7 +31,7 @@ namespace Umbraco.Community.NestedContentConverter.Infrastructure.Persistence.Mo
         /// <summary>
         /// Gets or sets the block list key.
         /// </summary>
-        [Column(Constants.Database.DataTypeMigrations.NestedContentKey)]
+        [Column(Constants.Database.DataTypeMigrations.BlockListKey)]
         [NullSetting(NullSetting = NullSettings.NotNull)]
         public Guid BlockListKey { get; set; }
     }
