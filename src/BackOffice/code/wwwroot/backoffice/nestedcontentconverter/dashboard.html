@@ -17,7 +17,13 @@
 
         <umb-box>
           <umb-box-header title="Datatypes"></umb-box-header>
-          <umb-box-content>List datatypes here</umb-box-content>
+          <umb-box-content ng-if="vm.dataTypeMigrationState === 'NoNestedContent'">No nested content based data types found. Nothing to migrate</umb-box-content>
+
+          <umb-box-content ng-if="vm.dataTypeMigrationState === 'NotMigrated'">We need to migrate everything</umb-box-content>
+
+          <umb-box-content ng-if="vm.dataTypeMigrationState === 'PartiallyMigrated'">We have migrated some datatypes, but not everyting</umb-box-content>
+
+          <umb-box-content ng-if="vm.dataTypeMigrationState === 'Done'">Migration is done, we can proceed</umb-box-content>
         </umb-box>
 
       </div>

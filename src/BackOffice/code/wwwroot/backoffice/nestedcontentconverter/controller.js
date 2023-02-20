@@ -6,12 +6,14 @@
 
     vm.loading = true;
     vm.title = "Nested content converter"
+    vm.dataTypeMigrationState = "";
 
     function getDataTypeMigrationState() {
       resource.getDataTypeMigrationState().then(function (result) {
-        if (result.State !== 'Done') {
-          vm.loading = false;
-        }
+        vm.dataTypeMigrationState = result.State;
+
+        vm.loading = false;
+
       });
     }        
 
