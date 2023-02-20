@@ -1,0 +1,15 @@
+.ncc-table {
+  box-shadow: none !important;
+}
+
+
+  .ncc-table .umb-table-body .umb-table-row {
+    border-top: 1px solid #e9e9eb;
+    border-left: 1px solid #e9e9eb;
+    border-right: 1px solid #e9e9eb;
+    border-bottom: 0;
+  }
+
+  .ncc-table .umb-table-body .umb-table-row:last-child {
+    border-bottom: 1px solid #e9e9eb;
+  }

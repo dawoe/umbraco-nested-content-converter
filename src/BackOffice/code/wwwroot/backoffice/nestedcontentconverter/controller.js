@@ -7,10 +7,12 @@
     vm.loading = true;
     vm.title = "Nested content converter"
     vm.dataTypeMigrationState = "";
+    vm.dataTypesToMigrate = [];
 
     function getDataTypeMigrationState() {
       resource.getDataTypeMigrationState().then(function (result) {
         vm.dataTypeMigrationState = result.State;
+        vm.dataTypesToMigrate = result.DataTypesToMigrate;
 
         vm.loading = false;
 

@@ -19,7 +19,37 @@
           <umb-box-header title="Datatypes"></umb-box-header>
           <umb-box-content ng-if="vm.dataTypeMigrationState === 'NoNestedContent'">No nested content based data types found. Nothing to migrate</umb-box-content>
 
-          <umb-box-content ng-if="vm.dataTypeMigrationState === 'NotMigrated'">We need to migrate everything</umb-box-content>
+          <umb-box-content ng-if="vm.dataTypeMigrationState === 'NotMigrated'">
+            <div class="umb-table ncc-table">
+              <div class="umb-table-head">
+                <div class="umb-table-row">
+                  <div class="umb-table-cell not-fixed">
+                    Nested content data type
+                  </div>
+                  <div class="umb-table-cell not-fixed">
+                    Block list name
+                  </div>
+                </div>
+              </div>
+              <div class="umb-table-body">
+                <div class="umb-table-row" ng-repeat="dt in vm.dataTypesToMigrate track by $index">
+                  <div class="umb-table-cell not-fixed">
+                    {{dt.NestedContentName}}
+                  </div>
+                  <div class="umb-table-cell">
+                    <input type="text" name="dt_{{$index}}" ng-model="dt.BlockListName" class="umb-property-editor umb-textstring textstring flx-i"/>
+                  </div>
+                </div>
+              </div>
+              <div class="umb-table-footer">
+                <div class="umb-table-row">
+                  <div class="umb-table-cell not-fixed">
+                    <umb-button label="Migrate datatypes" type="button" button-style="primary"></umb-button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </umb-box-content>
 
           <umb-box-content ng-if="vm.dataTypeMigrationState === 'PartiallyMigrated'">We have migrated some datatypes, but not everyting</umb-box-content>
 
@@ -31,6 +61,6 @@
 
   </umb-editor-view>
 
-  
+
 
 </div>

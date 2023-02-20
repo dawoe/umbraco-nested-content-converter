@@ -26,6 +26,7 @@ namespace Umbraco.Community.NestedContentConverter.BackOffice
                 BundleOptions = BundleOptions.Default,
                 Scripts =
                     new[] { "/App_Plugins/NestedContentConverter/backoffice/nestedcontentconverter/resource.js", "/App_Plugins/NestedContentConverter/backoffice/nestedcontentconverter/controller.js" },
+                Stylesheets = new[] { "/App_Plugins/NestedContentConverter/backoffice/nestedcontentconverter/styles.css" }
             });
         }
     }
